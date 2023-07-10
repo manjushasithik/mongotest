@@ -17,7 +17,7 @@ def db():
 # client = MongoClient("mongodb://paladmin:Administrator$Mariapp@10.201.1.181:27017/")
 
     client = MongoClient("mongodb://root:MongoFresh123@10.201.1.160:27017/")
-
+    print("client =========",client)
     db = client['Wiki_DEVDB']
 
 
