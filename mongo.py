@@ -1,3 +1,4 @@
+from math import e
 from pymongo import MongoClient
 
 
@@ -13,22 +14,25 @@ def test():
 @app.get("/db")
 def db():
 
-
-# client = MongoClient("mongodb://paladmin:Administrator$Mariapp@10.201.1.181:27017/")
-
-    client = MongoClient("mongodb://root:MongoFresh123@10.201.1.160:27017/")
-    print("client =========",client)
-    db = client['Wiki_DEVDB']
+    try:
 
 
+        client = MongoClient("mongodb://root:MongoFresh123@10.201.1.160:27017/")
 
-    collection = db['Articles']
+        db = client['Wiki_DEVDB']
 
 
-    document = collection.find_one()
 
-    print(document)
+        collection = db['Articles']
 
-    # response = Response(content=document, media_type="text/html")
 
-    return "Success"
+        document = collection.find_one()
+
+        print(document)
+
+        # response = Response(content=document, media_type="text/html")
+
+        return "Success"
+    except Exception as e:
+        return str(e)
+    
