@@ -17,9 +17,11 @@ def db():
     try:
 
 
-        client = MongoClient("mongodb://root:MongoFresh123@10.201.1.160:27017/")
+        # client = MongoClient("mongodb://root:MongoFresh123@10.201.1.160:27017/")
+        client = MongoClient("mongodb://wikiSupport:W!k!Support%40!23@10.105.0.31:27017/")
+        
 
-        db = client['Wiki_DEVDB']
+        db = client['wikiSupport']
 
 
 
